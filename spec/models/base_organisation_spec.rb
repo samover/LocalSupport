@@ -9,6 +9,10 @@ describe BaseOrganisation, type: :model do
     it 'is should have name' do
       expect(FactoryGirl.build(:organisation, name: '')).not_to be_valid
     end
+
+    it 'should validate a postcode' do
+      expect(FactoryGirl.build(:organisation, postcode: 'ABD542')).not_to be_valid
+    end
   end
 
   describe '#has_been_updated_recently?' do
